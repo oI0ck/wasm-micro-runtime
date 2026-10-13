@@ -52,7 +52,7 @@ os_thread_wrapper(void *arg)
 #if BH_DEBUG != 0
 #if defined __APPLE__
     pthread_setname_np("wamr");
-#else
+#elif !defined(phoenix)
     pthread_setname_np(pthread_self(), "wamr");
 #endif
 #endif
